@@ -1,26 +1,30 @@
-use std::fmt::{Display, Formatter};
 
+#[derive(Debug)]
 struct User {
     username: String,
     email: String,
 }
 
-impl Display for User {
-    fn fmt(&self, f: &mut Formatter<'_>) -> std::fmt::Result {
-        write!(f, "name is {}, email is {}", self.username, self.email)
+impl User {
+    fn say_hello(&self) -> String {
+        let mut s = String::from("name: ");
+        s.push_str(&*self.username);
+        s.push_str(", email: ");
+        s.push_str(&*self.email);
+        return s;
     }
 }
 
 
 fn main() {
-
     let mut tom = User {
         username: String::from("tom"),
         email: String::from("tom@tom.com"),
     };
     tom.username = String::from("little tom");
     println!("tom's email is: {}", tom.email);
-    println!("tom is: {}", tom);
+    println!("tom is: {:?}", tom);
+    println!("{}", tom.say_hello());
 
     // 调用系统宏函数需要叹号
     println!("Hello, rust world!");
