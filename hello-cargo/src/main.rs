@@ -1,10 +1,13 @@
 
+// 类似与注解，可以打印出结构体内字段信息
 #[derive(Debug)]
+// 定义结构体
 struct User {
     username: String,
     email: String,
 }
 
+// 实现结构体方法
 impl User {
     fn say_hello(&self) -> String {
         let mut s = String::from("name: ");
@@ -14,7 +17,6 @@ impl User {
         return s;
     }
 }
-
 
 fn main() {
     let mut tom = User {
