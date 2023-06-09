@@ -73,6 +73,17 @@ fn main() {
     println!("s2 is: {}", s2);
     let s3 = s2.clone();
     println!("s3 is: {}", s3);
+
+    let mut list = Vec::new();
+    list.push("Hello");
+    list.push("World");
+    println!("raw list is {:?}", list);
+    let item = list.pop().unwrap();
+    println!("pop item is {:?}", item);
+    list.reverse();
+    println!("after call reverse(), list is {:?}", list);
+    list.clear();
+    println!("after call clear(), list is {:?}", list);
 }
 
 fn change_str(s: &mut String) {
